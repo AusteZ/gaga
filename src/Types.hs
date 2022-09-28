@@ -1,6 +1,6 @@
 {-# LANGUAGE DeriveGeneric #-}
 module Types (
-    Document(..), Check(..)
+    Document(..), Check(..), Coord(..)
 ) where
 import Data.Yaml as Y
 import Data.HashMap.Strict as HMS
@@ -27,7 +27,7 @@ instance ToJSON Coord
 -- Document represents a document which is used to
 -- communicate with a game server
 data Document =
-    DMap [(String, Document)]
+      DMap [(String, Document)] -- first list is 3 members long
     | DList [Document]
     | DInteger Int
     | DString String
